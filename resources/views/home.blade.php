@@ -1,9 +1,12 @@
 @extends('layouts.master')
+@section('tittle')
+Home
+@endsection
 @section('content')
     <section class="content-header">
         <h1>
           Halaman Dashboard
-          <small>Melodi tentang cinta</small>
+          <small>Rumah Sakit XYZ</small>
         </h1>
         <ol class="breadcrumb">
         <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -29,17 +32,12 @@
                     {{ session('status') }}
                     </div>
             @endif
-            You are logged in! <br>
+            You are logged in! <br><br>
             Start creating your amazing application!
           </div>
           <!-- /.box-body -->
-          <div class="box-footer">
-            Footer
-          </div>
-          <!-- /.box-footer-->
         </div>
         <!-- /.box -->
-
       </section>
       <!-- /.content -->
 @endsection

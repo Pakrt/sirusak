@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="assets/login/images/icons/favicon.ico">
+    <link rel="icon" href="/assets/img/rusak.ico">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->

@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>.:: SIRUSAK XYZ</title>
+  <title>
+      .:SIRUSAK | @yield('tittle')
+  </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="icon" href="/assets/img/rusak64.ico">
+  <link rel="icon" href="/assets/img/rusak.ico">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -130,17 +132,6 @@
           <a href="{{ url('/') }}"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- search form -->
-      {{-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> --}}
-      <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
@@ -150,6 +141,11 @@
           </a>
         </li>
         <li class="treeview">
+            <a href="{{ url('/home') }}">
+              <i class="fa fa-users"></i> <span>Data Pasien</span>
+            </a>
+          </li>
+        <li class="treeview">
             <a href="#">
               <i class="fa fa-link"></i> <span>Master</span>
               <span class="pull-right-container">
@@ -157,9 +153,10 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Master 1</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Master 2</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Master 3</a></li>
+                <li><a href="{{ url("/user") }}"><i class="fa fa-user-md"></i>User</a></li>
+                <li><a href="{{ url("/material") }}"><i class="fa fa-medkit"></i>Material Kesehatan</a></li>
+                <li><a href="{{ url("/kamar") }}"><i class="fa fa-bed"></i>Rawat Inap</a></li>
+                <li><a href="{{ url("/tindakan") }}"><i class="fa fa-briefcase"></i>Tindakan Medis</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -175,9 +172,9 @@
             </ul>
         </li>
         <li class="treeview">
-        <a href="{{ url('/blank') }}">
-            <span>Blank Page</span>
-        </a>
+            <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">
+                <span>Fontawesome</span>
+            </a>
          </li>
       </ul>
     </section>
