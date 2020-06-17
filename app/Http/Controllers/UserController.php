@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
+        $users = User::all();
         return view('master.user.index', ['users' => $users]);
     }
 
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $users = new User;
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = $request->password;
+
+        $users->save();
+       // User::create($request->all());
+        return redirect('/user')->with('status', 'Data Berhasil ditambahkan !!');
     }
 
     /**

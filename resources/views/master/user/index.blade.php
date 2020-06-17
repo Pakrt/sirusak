@@ -19,6 +19,7 @@ Data User
         <!-- Default box -->
             <div class="box">
                 <div class="box-body">
+                    {{-- <a href="user/create"><label class="btn btn-primary">Tambah</label></a> --}}
                     <table class="table table-striped">
                         <thead>
                             <tr>

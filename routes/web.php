@@ -21,4 +21,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/user', 'UserController@index');
+Route::get('/user/create', 'UserController@create');
+Route::post('/user', 'UserController@store');
+
+Route::get('/pasien', 'PatientController@index');
+Route::post('/pasien/create', 'PatientController@create');
+Route::get('/pasien/{id}/detail', 'PatientController@show');
+Route::delete('/pasien/{id}/delete', 'PatientController@destroy');
+Route::get('pasien/{id}/edit', 'PatientController@edit');
+Route::post('pasien/{id}/update', 'PatientController@update');
