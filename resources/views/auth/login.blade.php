@@ -1,6 +1,5 @@
-@extends('layouts.app')
 <!--===============================================================================================-->
-    <link rel="icon" href="/assets/img/rusak.ico">
+<link rel="icon" href="/assets/img/rusak.ico">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -21,12 +20,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/login/css/main.css">
 <!--===============================================================================================-->
-@section('content')
+<title>SIRUSAK | Login</title>
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(assets/login/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						Log In
+                        <br><h2 >Sistem Informasi Rumah Sakit</h2>
+                        XYZ
 					</span>
 				</div>
                 <form action="{{ route('login') }}" method="POST" class="login100-form validate-form">
@@ -64,7 +64,7 @@
                         @if (Route::has('password.request'))
 						<div>
                             <a href="{{ route('password.request') }}" class="txt1">
-								Forgot your Password?
+								{{-- Forgot your Password? --}}
 							</a>
                         </div>
                         @endif
@@ -78,7 +78,6 @@
 				</form>
 			</div>
 		</div>
-@endsection
 <!--===============================================================================================-->
 	<script src="assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
