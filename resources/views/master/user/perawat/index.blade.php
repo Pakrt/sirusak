@@ -1,16 +1,16 @@
 @extends('layouts.master')
 @section('tittle')
-Data Dokter
+Data Perawat
 @endsection
 @section('content')
     <section class="content-header">
         <h1>
-          Data Dokter
+          Data Perawat
           <small>Rumah Sakit XYZ</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li class="active"><i class="fa fa-user"></i>Data Dokter</li>
+            <li class="active"><i class="fa fa-user"></i>Data Perawat</li>
         </ol>
       </section>
       <!-- Main content -->
@@ -41,14 +41,14 @@ Data Dokter
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dokter as $dokter)
+                            @foreach ($perawat as $perawat)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $dokter->nama }}</td>
-                                <td>{{ $dokter->jenis_kelamin }}</td>
-                                <td>{{ $dokter->spesialis }}</td>
+                                <td>{{ $perawat->nama }}</td>
+                                <td>{{ $perawat->jenis_kelamin }}</td>
+                                <td>{{ $perawat->spesialis }}</td>
                                 <td>
-                                    <a href="/dokter/{{ $dokter->id }}/detail" class="btn btn-warning btn-sm">Detail</a>
+                                    <a href="/perawat/{{ $perawat->id }}/detail" class="btn btn-warning btn-sm">Detail</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -67,9 +67,9 @@ Data Dokter
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Tambah Data Dokter</h4>
+              <h4 class="modal-title">Tambah Data Perawat</h4>
             </div>
-            <form action="/dokter/create" role="form" method="POST">
+            <form action="/perawat/create" role="form" method="POST">
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">

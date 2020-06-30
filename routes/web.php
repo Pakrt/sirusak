@@ -23,16 +23,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['checkRole:admin']], function () {
-    Route::get('/user', 'UserController@index');
-    Route::get('/user/create', 'UserController@create');
-    Route::post('/user', 'UserController@store');
-
     Route::get('/dokter', 'DoctorController@index');
     Route::post('/dokter/create', 'DoctorController@create');
     Route::get('/dokter/{id}/detail', 'DoctorController@show');
     Route::delete('/dokter/{id}/delete', 'DoctorController@destroy');
     Route::get('/dokter/{id}/edit', 'DoctorController@edit');
     Route::post('/dokter/{id}/update', 'DoctorController@update');
+
+    Route::get('/perawat', 'NurseController@index');
+    Route::post('/perawat/create', 'NurseController@create');
+    Route::get('/perawat/{id}/detail', 'NurseController@show');
+    Route::delete('/perawat/{id}/delete', 'NurseController@destroy');
+    Route::get('/perawat/{id}/edit', 'NurseController@edit');
+    Route::post('/perawat/{id}/update', 'NurseController@update');
 
     Route::get('/kamar', 'RoomController@index');
     Route::post('/kamar/create', 'RoomController@create');
@@ -46,8 +49,13 @@ Route::group(['middleware' => ['checkRole:admin']], function () {
     Route::get('/material/{id}/edit', 'MaterialController@edit');
     Route::post('/material/{id}/update', 'MaterialController@update');
 
+    Route::get('/tindakan', 'TindakanController@index');
+    Route::post('/tindakan/create', 'TindakanController@create');
+    Route::delete('/tindakan/{id}/delete', 'TindakanController@destroy');
+    Route::get('/tindakan/{id}/edit', 'TindakanController@edit');
+    Route::post('/tindakan/{id}/update', 'TindakanController@update');
 });
-Route::group(['middleware' => ['checkRole:admin,dokter']], function () {
+Route::group(['middleware' => ['checkRole:admin,dokter,perawat']], function () {
     Route::get('/pasien', 'PatientController@index');
     Route::post('/pasien/create', 'PatientController@create');
     Route::get('/pasien/{id}/detail', 'PatientController@show');

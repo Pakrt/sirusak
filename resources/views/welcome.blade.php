@@ -94,9 +94,10 @@
                                     {{-- <h5>We are here for your care</h5>
                                     <h1>Best Care &
                                         Better Doctor</h1> --}}
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit sed do eiusmod tempor incididunt ut labore et dolore
-                                        magna aliqua. Quis ipsum suspendisse ultrices gravida.Risus cmodo viverra </p>
+                                    <p>Web ini dibuat dengan tujuan sebagai syarat untuk menambah nilai pada mata kuliah
+                                        Pemrograman Web semester genap. Fakultas Teknik | Program Studi Informatika |
+                                        Universitas 17 Agustus 1945 Surabaya.
+                                    </p>
                                     @if (Route::has('login'))
                                         <div>
                                             @auth

@@ -75,13 +75,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/assets/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="/assets/img/nouser.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/assets/img/nouser.jpg" class="img-circle" alt="User Image">
                 <p>
                     {{ Auth::user()->name }} - Web Developer
                     <small>Member since Nov. 2012</small>
@@ -125,7 +125,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/assets/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/assets/img/nouser.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -135,34 +135,44 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('/pasien') }}"><i class="fa fa-users"></i> <span>Data Pasien</span></a></li>
+        <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span> Dashboard</span></a></li>
+        <li><a href="{{ url('/pasien') }}"><i class="fa fa-users"></i> <span> Data Pasien</span></a></li>
+        @if (auth()->user()->role == 'admin')
         <li class="treeview">
             <a href="#">
-              <i class="fa fa-link"></i> <span>Master</span>
+              <i class="fa fa-link"></i> <span> Master</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="{{ url("/dokter") }}"><i class="fa fa-user-md"></i>Dokter</a></li>
-                <li><a href="{{ url("/perawat") }}"><i class="fa fa-user-md"></i>Perawat</a></li>
-                <li><a href="{{ url("/user") }}"><i class="fa fa-user-md"></i>User</a></li>
-                <li><a href="{{ url("/material") }}"><i class="fa fa-medkit"></i>Material Kesehatan</a></li>
-                <li><a href="{{ url("/kamar") }}"><i class="fa fa-bed"></i>Rawat Inap</a></li>
-                <li><a href="{{ url("/tindakan") }}"><i class="fa fa-briefcase"></i>Tindakan Medis</a></li>
+              <li><a href="{{ url("/material") }}"><i class="fa fa-medkit"></i> Material Kesehatan</a></li>
+              <li><a href="{{ url("/tindakan") }}"><i class="fa fa-briefcase"></i> Tindakan Medis</a></li>
+              <li><a href="{{ url("/kamar") }}"><i class="fa fa-bed"></i> Kamar Rawat Inap</a></li>
+              <li class="treeview">
+                  <a href="#"><i class="fa fa-users"></i> Users
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url("/dokter") }}"><i class="fa fa-user-md"></i> Dokter</a></li>
+                    <li><a href="{{ url("/perawat") }}"><i class="fa fa-user-md"></i> Perawat</a></li>
+                </ul>
+              </li>
             </ul>
         </li>
+        @endif
         <li class="treeview">
             <a href="#">
-              <i class="fa fa-user"></i> <span>Transaction</span>
+              <i class="fa fa-user"></i> <span> Transaction</span>
               <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> TR1</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> TR2</a></li>
+                <li><a href="#"><i class="fa fa-heartbeat"></i> Rekam Medik</a></li>
+                <li><a href="#"><i class="fa fa-bed"></i> Rawat Inap</a></li>
             </ul>
         </li>
         <li class="treeview">
