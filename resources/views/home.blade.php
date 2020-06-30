@@ -30,10 +30,10 @@ Home
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
-                    </div>
+                </div>
             @endif
-            You are logged in! <br><br>
-            Start creating your amazing application!
+            <h2>Selamat Datang</h2>
+            <h2>{{ Auth::user()->name }} </h2>
           </div>
           <!-- /.box-body -->
         </div>

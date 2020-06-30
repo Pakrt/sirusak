@@ -145,6 +145,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
+                <li><a href="{{ url("/dokter") }}"><i class="fa fa-user-md"></i>Dokter</a></li>
+                <li><a href="{{ url("/perawat") }}"><i class="fa fa-user-md"></i>Perawat</a></li>
                 <li><a href="{{ url("/user") }}"><i class="fa fa-user-md"></i>User</a></li>
                 <li><a href="{{ url("/material") }}"><i class="fa fa-medkit"></i>Material Kesehatan</a></li>
                 <li><a href="{{ url("/kamar") }}"><i class="fa fa-bed"></i>Rawat Inap</a></li>
